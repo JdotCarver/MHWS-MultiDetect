@@ -1,5 +1,5 @@
 -- 📦 Full situation list from original data, indexed by enum ID
-local situation_field_names = {
+return {
     [1]  = "Online",
     [2]  = "SoloOnline",
     [3]  = "Offline",
