@@ -1,8 +1,8 @@
 # 🌟 The Good Stuff
-[🔗 **Direct link to the method]**
+[🔗 **Direct link to the method (when testing complete)]**
   
 # Overview
-This project is a plug-and-play Situation Watcher for **Monster Hunter: Wilds**, specifically developed with mod safety and multiplayer integrity in mind. It helps modders and toolmakers reliably detect in-game player states—such as online/offline status, quest involvement, and lobby contexts—using internal situation flags exposed by the game.
+This project is a plug-and-play Situation Watcher for **Monster Hunter: Wilds**, specifically developed with mod safety and multiplayer integrity in mind. It helps modders and toolmakers reliably detect in-game player situations—such as online/offline status, quest involvement, and lobby contexts—using internal situation flags exposed by the game.
 
 The goal is simple:  
 Prevent mods from unintentionally breaking multiplayer experiences or risking account bans.  
@@ -18,20 +18,24 @@ _Don't let this be you. :[_
 # Installation & Usage
 This repo contains two versions :
 
-### [🔗 **The Testing version]**  
-For debug usage and creating more human readable states.  
-Includes debug prints, enum suggestions, and logs to help improve detection accuracy.  
-Plop the lua in your autorun folder and open the REFramework console to see the logs it prints in-game!
-
-
-### [🔗 **The Production version]**  
+### [🔗 **The Production version (when testing complete)]**  
 Lightweight, stripped of noise, and built for seamless integration into your mod! :)  
-Just drop the code into your mod's script and select the states you want to monitor.
+Just drop the code into your mod's script and select the situations you want to monitor.
   
   <br />
-  
+
+### [🔗 **The Testing version**](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main/Test%20Version)  
+For debug usage and creating more human readable situations.  
+Includes debug prints, enum suggestions, and logs to help improve detection accuracy.  
+1. Plop MultiDetect.lua, MD_Known_Situations.lua, MD_Possible_Situations.lua in your Autorun/Utility folder.
+2. Open MH:Wilds and start the REFramework console to see the logs it prints in-game.
+3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.
+4. When you are pretty sure you can confirm the situation, add it in MD_Known_Situations.lua, and save.
+5. In ReFramework, reset scripts and continue finding unconfirmed situations.
+
+
 # 🔎 How It Works
-This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game state updates), the hook intercepts the new data and compares it to the last known situation state.
+This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations.
 
 ### Possible Situations
 MH:Wilds tracks the changes in and out of these situations :    [🔗 **Possible Situations**](https://github.com/JdotCarver/MHWS-Multidetect/blob/67cc4e1e780a57c255a926d77d6249691b841946/Test%20Version/Possible_Situations.lua#L1)  
@@ -50,7 +54,7 @@ Special thanks to:
   <br />
  
 ## License & Community Use
-- 🆓 This project is free to use, fork, modify, and improve for any open-source or private mod that benefits from better state awareness.  
+- 🆓 This project is free to use, fork, modify, and improve for any open-source or private mod that benefits from better situation state awareness.  
 - 💡 If the mod is open-source, integration is extremely simple. I took extra care to make the code as readable as could be so that even beginners could lend a hand. :)    
   
   <br />
