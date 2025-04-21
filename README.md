@@ -38,7 +38,7 @@ reframework/
 ```
 2. Open MH:Wilds and start the REFramework console to see the logs it prints in-game.
 3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.
-4. When you are pretty sure you can confirm the situation, add it in MD_Known_Situations.lua, and save.
+4. When you are pretty sure you can confirm the situation, add it in ```MD_Known_Situations.lua```, and save.
 5. In REFramework, reset scripts and continue finding unconfirmed situations.
 
 
