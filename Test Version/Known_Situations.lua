@@ -1,4 +1,4 @@
--- Confirmed, human-readable situation mappings. Add/Update entries as you confirm them!
+-- ✅ Confirmed, human-readable situation mappings, with comments as to WHEN they exactly trigger. Add/Update entries as you confirm them!
 -- Once all (44 as of writing) situations are confirmed, this list will only neeed to be changed when/if new updates arrive that modify them.
 return {
     [1]  = "Online",                -- Player is not Offline or Solo-Online
