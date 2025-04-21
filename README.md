@@ -33,9 +33,9 @@ Just drop the code into your mod's script and select the states you want to moni
 # 🔎 How It Works
 This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game state updates), the hook intercepts the new data and compares it to the last known situation state.
 
-### Current Known Situations
-MHWilds tracks the changes in and out of these situations :    [🔗 **Link to file with og situations**]  
-So if your mod can benefit from detecting when the player is in a Multiplayer quest, Hosting an Arena, in the Training Area, or Solo Offline for example, this system is built for you!  
+### Possible Situations
+MH:Wilds tracks the changes in and out of these situations :    [🔗 **Possible Situations**](https://github.com/JdotCarver/MHWS-Multidetect/blob/67cc4e1e780a57c255a926d77d6249691b841946/Test%20Version/Possible_Situations.lua#L1)  
+So if your mod can benefit from detecting when the player is in a Multiplayer quest, Hosting an Arena, in the Training Area, or Playing Offline for example, this system is built for you!  
 Keep in mind that this list will most likely grow as they add more features to the game, so if you find a new situation or improve the logic, PRs are warmly welcome.  
   
   <br />
