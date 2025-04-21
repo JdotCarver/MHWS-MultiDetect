@@ -27,11 +27,19 @@ Just drop the code into your mod's script and select the situations you want to 
 ### [🔗 **The Testing version**](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main/Test%20Version)  
 For debug usage and creating more human readable situations.  
 Includes debug prints, enum suggestions, and logs to help improve detection accuracy.  
-1. Plop MultiDetect.lua, MD_Known_Situations.lua, MD_Possible_Situations.lua in your Autorun/Utility folder.
+1. Put the files like this in your reframework folder :
+```
+reframework/
+└── autorun/
+    ├── MultiDetect_Testing.lua
+    └── MultiDetect_TestingFiles/
+        ├── MD_Known_Situations.lua
+        └── MD_Possible_Situations.lua 
+```
 2. Open MH:Wilds and start the REFramework console to see the logs it prints in-game.
 3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.
 4. When you are pretty sure you can confirm the situation, add it in MD_Known_Situations.lua, and save.
-5. In ReFramework, reset scripts and continue finding unconfirmed situations.
+5. In REFramework, reset scripts and continue finding unconfirmed situations.
 
 
 # 🔎 How It Works
