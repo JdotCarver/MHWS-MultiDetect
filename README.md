@@ -35,7 +35,7 @@ Includes debug prints, enum suggestions, and logs to help improve detection accu
 
 
 # 🔎 How It Works
-This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations.
+This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations. This function is **only** called when a situation change arises, making it extra efficient.
 
 ### Possible Situations
 MH:Wilds tracks the changes in and out of these situations :    [🔗 **Possible Situations**](https://github.com/JdotCarver/MHWS-Multidetect/blob/67cc4e1e780a57c255a926d77d6249691b841946/Test%20Version/Possible_Situations.lua#L1)  
