@@ -2,8 +2,6 @@
 [🔗 **Direct link to the method (when testing complete)]**
   
 # Overview
-This project is a plug-and-play Situation Watcher for **Monster Hunter: Wilds**, specifically developed with mod safety and multiplayer integrity in mind. It helps modders and toolmakers reliably detect in-game player situations—such as online/offline status, quest involvement, and lobby contexts—using internal situation flags exposed by the game.
-
 The goal is simple:  
 Prevent mods from unintentionally breaking multiplayer experiences or risking account bans.  
 As we all know they are carefully watching. No-one would wish modders to be conflated with cheaters. By identifying and understanding the player's context, your mods can behave more responsibly.  
@@ -14,7 +12,30 @@ As we all know they are carefully watching. No-one would wish modders to be conf
 _Don't let this be you. :[_
   
   <br />
+
+# 🔎 How It Works
+<details>
+<summary><h2> Give me the Short version </h2></summary>  
+
+- The game has an internal tracker of the player's state.  
+- This script reveals every single state change.  
+- Since only some scenarios are ban worthy (say playing Arena Quests = High chance of Ban, Offline = Low Chance of ban), your mod can use that information to only activate itself in the scenarios that you have set as safe.  
+</details> 
+<details>
+<summary><h2> I want the Long Version </h2></summary>
   
+This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations. This function is **only** called when a situation change arises, making it extra efficient.
+
+### Possible Situations
+MH:Wilds tracks the changes in and out of these situations :    [🔗 **Possible Situations**](https://github.com/JdotCarver/MHWS-Multidetect/blob/67cc4e1e780a57c255a926d77d6249691b841946/Test%20Version/Possible_Situations.lua#L1)  
+
+So if your mod can benefit from detecting when the player is in a Multiplayer quest, Hosting an Arena, in the Training Area, or Playing Offline for example, this system is built for you!  
+Keep in mind that this list will most likely grow as they add more features to the game, so if you find a new situation or improve the logic, PRs are warmly welcome.  
+</details>
+  
+  <br />
+  
+
 # Installation & Usage
 This repo contains two versions :
 
@@ -24,9 +45,11 @@ Just drop the code into your mod's script and select the situations you want to 
   
   <br />
 
-### [🔗 **The Testing version**](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main/Test%20Version)  
+### [🔗 **The Testing version**](https://github.com/JdotCarver/MHWS-MultiDetect/releases/)  
 For debug usage and creating more human readable situations.  
 Includes debug prints, enum suggestions, and logs to help improve detection accuracy.  
+<details><summary><h3>Step by step guide</h3></summary>
+
 1. Put the files like this in your reframework folder :
 ```
 MonsterHunterWilds
@@ -56,21 +79,13 @@ MonsterHunterWilds
     ![image](https://github.com/user-attachments/assets/3ef37ae9-fff9-4ec2-a191-20e105bdcd9b)  
     _Location of the_ `Reset Scripts` _and_ `Spawn Debug Console` _buttons_
 
+</details>
+
 
   
   <br />
   
-# 🔎 How It Works
-This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations. This function is **only** called when a situation change arises, making it extra efficient.
 
-### Possible Situations
-MH:Wilds tracks the changes in and out of these situations :    [🔗 **Possible Situations**](https://github.com/JdotCarver/MHWS-Multidetect/blob/67cc4e1e780a57c255a926d77d6249691b841946/Test%20Version/Possible_Situations.lua#L1)  
-
-So if your mod can benefit from detecting when the player is in a Multiplayer quest, Hosting an Arena, in the Training Area, or Playing Offline for example, this system is built for you!  
-Keep in mind that this list will most likely grow as they add more features to the game, so if you find a new situation or improve the logic, PRs are warmly welcome.  
-  
-  <br />
-  
 ## 🙏 Credits & Thanks
 Special thanks to:
 
