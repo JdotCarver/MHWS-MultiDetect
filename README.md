@@ -42,9 +42,15 @@ MonsterHunterWilds
                                           └─ MD_Possible_Situations.lua     
 ```
 2. Open MH:Wilds and in REFramework `Spawn Debug Console` to see the logs it prints while you test in-game.
-3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.
-4. When you are pretty sure you can confirm the situation, add it in ```MD_Known_Situations.lua```, and save.
-5. In REFramework, `Reset scripts` and continue finding unconfirmed situations.
+   
+   ![image](https://github.com/user-attachments/assets/87c75911-d1e9-4ea0-bf54-2601eba6dde1)  
+   _Here we can see that game does the transition Out  
+   of Suja and Into Grand Hub as 2 distinct events_
+
+\
+3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.  
+4. When you are pretty sure you can confirm the situation, add it in ```MD_Known_Situations.lua```, and save.  
+5. In REFramework, `Reset scripts` and continue finding unconfirmed situations.  
 
   \
     ![image](https://github.com/user-attachments/assets/3ef37ae9-fff9-4ec2-a191-20e105bdcd9b)  
