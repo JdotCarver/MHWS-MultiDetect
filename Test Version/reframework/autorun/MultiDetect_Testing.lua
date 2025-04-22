@@ -29,6 +29,7 @@ local situation_field_names = require("MultiDetect_TestingFiles.MD_Possible_Situ
 
 local prev_situation_ids = {}
 local suggestion_counts = {}
+local first_run = true
 
 local function suggest_enum_candidates(id, confirmed_ids)
     local suggestions = {}
@@ -142,37 +143,54 @@ sdk.hook(
             end
 
             -- Output the grouped log
-            print("-= Situation change detected =-")
+            if first_run then
+                print("-= Initial Player Situation has been successfully recorded. The next situation change will display details. :) =-")
+            else
+                print("-= Situation change detected =-")
+            end
+            print("")
 
             if #still_active > 0 then
-                print("Player is still:")
+                print(" Player is still:")
                 for _, id in ipairs(still_active) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print("= " .. name .. " (" .. id .. ")")
+                    print(" = " .. name .. " (" .. id .. ")")
                 end
                 print("")
             end
             
             if #removed > 0 then
-                print("Player is no longer:")
+                print(" Player is no longer:")
                 for _, id in ipairs(removed) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print("- " .. name .. " (" .. id .. ")")
+                    print(" - " .. name .. " (" .. id .. ")")
                 end
                 print("")
             end
 
             if #added > 0 then
-                print("Player is now:")
+                if first_run then 
+                    if #added == 1 then --Haha, yes, I know, "ConsoleUI".
+                        print(" Player started in this Situation:") 
+                    else
+                        print(" Player started in these Situations:") 
+                    end
+                else 
+                    print(" Player is now:") 
+                end
                 for _, id in ipairs(added) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print("+ " .. name .. " (" .. id .. ")")
+                    print(" + " .. name .. " (" .. id .. ")")
                 end
                 print("")
             end
 
-            print("")
-            print("")
+            if first_run then 
+                print("")
+                first_run = false 
+                else
+                    print("") print("")
+            end
         end
 
         prev_situation_ids = new_ids
