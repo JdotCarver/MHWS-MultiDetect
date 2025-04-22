@@ -41,12 +41,19 @@ MonsterHunterWilds
                                           ├─ MD_Known_Situations.lua
                                           └─ MD_Possible_Situations.lua     
 ```
-2. Open MH:Wilds and start the REFramework console to see the logs it prints in-game.
+2. Open MH:Wilds and in REFramework `Spawn Debug Console` to see the logs it prints while you test in-game.
 3. When a new un-confirmed situation arises, the log will notify you and attempt to suggest possible candidates.
 4. When you are pretty sure you can confirm the situation, add it in ```MD_Known_Situations.lua```, and save.
-5. In REFramework, reset scripts and continue finding unconfirmed situations.
+5. In REFramework, `Reset scripts` and continue finding unconfirmed situations.
+
+  \
+    ![image](https://github.com/user-attachments/assets/3ef37ae9-fff9-4ec2-a191-20e105bdcd9b)  
+    _Location of the_ `Reset Scripts` _and_ `Spawn Debug Console` _buttons_
 
 
+  
+  <br />
+  
 # 🔎 How It Works
 This project hooks the ```ToArray()``` method of the internal ```List<app.cGUIMaskContentsManager.SITUATION>``` type in REFramework. When the situation list changes (i.e., the player's in-game situation updates), the hook intercepts the new data and compares it to the last known situations. This function is **only** called when a situation change arises, making it extra efficient.
 
