@@ -17,9 +17,9 @@ _Don't let this be you. :[_
 <details>
 <summary><h2> Give me the Short version </h2></summary>  
 
-- The game has an internal tracker of the player's state.  
-- This script reveals every single state change.  
-- Since only some scenarios are ban worthy (say playing Arena Quests = High chance of Ban, Offline = Low Chance of ban), your mod can use that information to only activate itself in the scenarios that you have set as safe.  
+- The game has an internal tracker of the player's situation.  
+- This script reveals every single situation change.  
+- Since only some situations are ban worthy (say, playing Arena Quests = High chance of Ban, Offline = Low Chance of ban), your mod can use that information to only activate itself in the situations that you have set as Safe. :)  
 </details> 
 <details>
 <summary><h2> I want the Long Version </h2></summary>
