@@ -5,7 +5,7 @@
 -- Delete the lines of the situations you do not need to keep track of.
 --
 -- Usage:
---    if PlayerSituation.Online then
+--    if PlayerSituation.isOnline then
 --        -- do something
 --    end
 --
