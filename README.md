@@ -1,6 +1,6 @@
 # 🌟 The Good Stuff
 [🔗 **Direct link to the method]**  
-This method only supports 27 out of the 44 possible states! We need help mapping out the remaining ones! See [link] on how you can help.
+This method only supports 27 out of the 44 possible states! Please help out mapping the remaining ones! See [link] on how you can help.
   
 # Overview
 The goal is simple:  
