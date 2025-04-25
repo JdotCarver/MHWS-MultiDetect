@@ -1,5 +1,6 @@
 # 🌟 The Good Stuff
-[🔗 **Direct link to the method (when testing complete)]**
+[🔗 **Direct link to the method]**  
+This method only supports 27 out of the 44 possible states! Please help out mapping the remaining ones! See [link] on how you can help.
   
 # Overview
 The goal is simple:  
@@ -39,9 +40,10 @@ Keep in mind that this list will most likely grow as they add more features to t
 # Installation & Usage
 This repo contains two versions :
 
-### [🔗 **The Production version (when testing complete)]**  
+### [🔗 **The Production version]**  
 Lightweight, stripped of noise, and built for seamless integration into your mod! :)  
 Just drop the code into your mod's script and select the situations you want to monitor.
+This method only supports 27 out of the 44 possible states! We need help mapping out the remaining ones! See The Testing version below for how you can help. :)
   
   <br />
 

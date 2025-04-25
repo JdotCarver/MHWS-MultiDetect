@@ -1,8 +1,25 @@
--- ✅ Confirmed, human-readable situation mappings, with comments as to WHEN they exactly trigger. Add/Update entries as you confirm them! And don't forget to share your findings on the repo (https://github.com/JdotCarver/MHWS-MultiDetect/blob/main/Test%20Version/reframework/autorun/MultiDetect_TestingFiles/MD_Known_Situations.lua)
--- Once all (44 as of writing) situations are confirmed, this list will only neeed to be changed when/if new updates arrive that modify them.
+-- ============================================================================
+--             MultiDetect Situation Watcher (Production Version)
+-- ============================================================================
+-- Copy the code into your mod and it will keep `PlayerSituation` up to date.
+-- Delete the lines of the situations you do not need to keep track of.
+--
+-- Usage:
+--    if PlayerSituation.Online then
+--        -- do something
+--    end
+--
+-- ============================================================================
 
--- [ArrayPosition] = "FriendlyName",      -- DataminedName                  - Details as of when this situation arises.
-return {
+
+local sdk = sdk
+local prev_situation_ids = {}
+PlayerSituation = {}
+
+-- Known situation mappings (based on confirmed tests)
+local known_situations = {
+    -- [ArrayPosition] = "FriendlyName",    -- DataminedName                  - Details as of when this situation arises.
+
     [1]  = "isOnline",                      -- Online                         - Player is not Offline or Solo-Online
     [2]  = "isSoloOnline",                  -- SoloOnline                     - Exclusive to the Solo-Online mode
     [3]  = "isOfflineorMainMenu",           -- Offline                        - Game is in Offline mode, also true while in the main menu
@@ -26,3 +43,53 @@ return {
     [43] = "isatTable",                     -- TableAction                    - Sitting at gathering hub table
     [44] = "isAlwaysOn"                     -- (???)                          - Don't know what it does, seemly always on while in session
 }
+
+
+-- Internal state update
+local function update_player_situation(situation_ids)
+    -- Reset all to false
+    for _, name in pairs(known_situations) do
+        PlayerSituation[name] = false
+    end
+
+    -- Set currently active ones to true
+    for _, id in ipairs(situation_ids) do
+        local name = known_situations[id]
+        if name then
+            PlayerSituation[name] = true
+        end
+    end
+end
+
+-- Compare arrays for changes
+local function did_situations_change(new_ids)
+    if #new_ids ~= #prev_situation_ids then return true end
+    for i = 1, #new_ids do
+        if new_ids[i] ~= prev_situation_ids[i] then
+            return true
+        end
+    end
+    return false
+end
+
+-- Hook into situation state updates
+sdk.hook(
+    sdk.find_type_definition("System.Collections.Generic.List`1<app.cGUIMaskContentsManager.SITUATION>"):get_method("ToArray"),
+    function(args)
+        local this = sdk.to_managed_object(args[2])
+        if not this then return end
+
+        local count = this:call("get_Count")
+        local current_ids = {}
+        for i = 0, count - 1 do
+            local value = this:call("get_Item", i)
+            table.insert(current_ids, value)
+        end
+
+        if did_situations_change(current_ids) then
+            update_player_situation(current_ids)
+            prev_situation_ids = current_ids
+        end
+    end,
+    function(retval) return retval end
+)
