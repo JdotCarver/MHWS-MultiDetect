@@ -43,8 +43,9 @@ This repo contains two versions :
 
 ### [🔗 The Production version](https://github.com/JdotCarver/MHWS-MultiDetect/blob/main/Production%20Version/reframework/autorun/MultiDetect.lua)  
 Lightweight, stripped of noise, and built for seamless integration into your mod! :)  
-Just drop the code into your mod's script and select the situations you want to monitor.
-This method only supports 22 out of the 44 possible states! We need help mapping out the remaining ones! See The Testing version below for how you can help. :)
+Just drop the code into your mod's script and select the situations you want to monitor.  
+*This method only supports 22 out of the 44 possible states!*  
+*Please help out mapping the remaining ones! See the [testing version](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main?tab=readme-ov-file#-the-testing-version) below for how you can help. :)*
   
   <br />
 
