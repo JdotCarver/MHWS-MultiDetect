@@ -1,6 +1,7 @@
 # 🌟 The Good Stuff
-[🔗 **Direct link to the method]**  
-This method only supports 27 out of the 44 possible states! Please help out mapping the remaining ones! See [link] on how you can help.
+### [🔗 Direct link to the method](https://github.com/JdotCarver/MHWS-MultiDetect/blob/main/Production%20Version/reframework/autorun/MultiDetect.lua)  
+This method only supports 22 out of the 44 possible states!  
+Please help out mapping the remaining ones! See [testing version](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main?tab=readme-ov-file#-the-testing-version) on how you can help.
   
 # Overview
 The goal is simple:  
@@ -40,14 +41,14 @@ Keep in mind that this list will most likely grow as they add more features to t
 # Installation & Usage
 This repo contains two versions :
 
-### [🔗 **The Production version]**  
+### [🔗 The Production version](https://github.com/JdotCarver/MHWS-MultiDetect/blob/main/Production%20Version/reframework/autorun/MultiDetect.lua)  
 Lightweight, stripped of noise, and built for seamless integration into your mod! :)  
 Just drop the code into your mod's script and select the situations you want to monitor.
 This method only supports 27 out of the 44 possible states! We need help mapping out the remaining ones! See The Testing version below for how you can help. :)
   
   <br />
 
-### [🔗 **The Testing version**](https://github.com/JdotCarver/MHWS-MultiDetect/releases/)  
+### [🔗 The Testing version](https://github.com/JdotCarver/MHWS-MultiDetect/releases/)  
 For debug usage and creating more human readable situations.  
 Includes debug prints, enum suggestions, and logs to help improve detection accuracy.  
 <details><summary><h3>Step by step guide</h3></summary>
