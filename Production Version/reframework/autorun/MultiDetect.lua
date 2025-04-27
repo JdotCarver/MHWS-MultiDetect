@@ -17,7 +17,8 @@ local sdk = sdk
 local prev_situation_ids = {}
 PlayerSituation = {}
 
--- Known situation mappings (based on confirmed tests)
+--- There are the Known situation mappings (based on confirmed tests).
+--- See all possible ones [on the GitHub](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main#possible-situations)
 local known_situations = {
     -- [ArrayPosition] = "FriendlyName",    -- DataminedName                  - Details as of when this situation arises.
 
