@@ -1,22 +1,24 @@
--- ============================================================================
---             MultiDetect Situation Watcher (Production Version)
--- ============================================================================
--- Copy the code into your mod and it will keep `PlayerSituation` up to date.
--- Delete the lines of the situations you do not need to keep track of.
+-- ======================================================================================================
+--                        MultiDetect Situation Watcher (Production Version)
+-- ======================================================================================================
+-- Copy this code into your mod and it will keep `PlayerSituation` and `Multiplayersafe` up to date.
 --
 -- Usage:
---    if PlayerSituation.isOnline then
---        -- do something
---    end
+-- 1. Modify check_multiplayer_safe() with what you want to check for.
+-- 2. (optional) Remove the situations you dont care about from known_situations
 --
--- ============================================================================
+-- Now if Multiplayersafe = true, then the player is safe. :)
+-- That's it!
+--
+-- ======================================================================================================
 
 
 local sdk = sdk
 local prev_situation_ids = {}
 PlayerSituation = {}
 
--- Known situation mappings (based on confirmed tests)
+--- There are the Known situation mappings (based on confirmed tests).
+--- See all possible ones [on the GitHub](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main#possible-situations)
 local known_situations = {
     -- [ArrayPosition] = "FriendlyName",    -- DataminedName                  - Details as of when this situation arises.
 
@@ -45,7 +47,6 @@ local known_situations = {
 }
 
 
--- Internal state update
 local function update_player_situation(situation_ids)
     -- Reset all to false
     for _, name in pairs(known_situations) do
@@ -61,7 +62,7 @@ local function update_player_situation(situation_ids)
     end
 end
 
--- Compare arrays for changes
+-- Compare new situation to previous one to see if there are any changes
 local function did_situations_change(new_ids)
     if #new_ids ~= #prev_situation_ids then return true end
     for i = 1, #new_ids do
@@ -72,7 +73,19 @@ local function did_situations_change(new_ids)
     return false
 end
 
--- Hook into situation state updates
+---@see PlayerSituation
+--- Determines if the current situation should be considered "safe".
+---@return boolean|nil # Default configuration makes Multiplayersafe true when: Offline, SoloOnline or in TrainingArea. 
+---Will return nil if previous situation is unknown. Typically happens upon resetting scripts.
+local function check_multiplayer_safe()
+    Multiplayersafe =
+           PlayerSituation.isOfflineorMainMenu 
+        or PlayerSituation.isSoloOnline 
+        or PlayerSituation.isinTrainingArea
+end
+
+
+-- Hook into the game's situation state updates
 sdk.hook(
     sdk.find_type_definition("System.Collections.Generic.List`1<app.cGUIMaskContentsManager.SITUATION>"):get_method("ToArray"),
     function(args)
@@ -88,6 +101,8 @@ sdk.hook(
 
         if did_situations_change(current_ids) then
             update_player_situation(current_ids)
+            check_multiplayer_safe()
+            --print("Player is Multiplayersafe?", Multiplayersafe) -- Uncomment for debug output
             prev_situation_ids = current_ids
         end
     end,
