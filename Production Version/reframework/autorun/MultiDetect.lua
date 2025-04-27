@@ -7,7 +7,7 @@
 -- 1. Modify check_multiplayer_safe() with what you want to check for.
 -- 2. (optional) Remove the situations you dont care about from known_situations
 --
--- Now if Multiplayersafe = true, then the player is safe. :)
+-- Now you can use if Multiplayersafe = true in your mod. :)
 -- That's it!
 --
 -- ======================================================================================================
