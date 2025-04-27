@@ -78,8 +78,16 @@ end
 ---@return boolean|nil # Default configuration makes Multiplayersafe true when: Offline, SoloOnline or in TrainingArea. 
 ---Will return nil if previous situation is unknown. Typically happens upon resetting scripts.
 local function check_multiplayer_safe()
+    -- Arena cases always unsafe (need to add the guest versions when confirmed)
+    if PlayerSituation.isinArenaQuestPlayingasHost
+    or PlayerSituation.isinArenaQuestWaitingasHost then
+        Multiplayersafe = false
+        return
+    end
+
+    -- Otherwise, check regular multiplayer-safe conditions
     Multiplayersafe =
-           PlayerSituation.isOfflineorMainMenu 
+           PlayerSituation.isOfflineorMainMenu
         or PlayerSituation.isSoloOnline 
         or PlayerSituation.isinTrainingArea
 end
