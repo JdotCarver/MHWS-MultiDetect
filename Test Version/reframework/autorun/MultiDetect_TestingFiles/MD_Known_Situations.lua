@@ -20,7 +20,7 @@ return {
     [37] = "isinJunctionArea",              -- JunctionArea                   - Special transition or linking zone (example: Suja <-> Wyveria passage)
     [38] = "isinSuja",                      -- ST503                          - Player is in the town of Suja 
     [39] = "isinGrandHub",                  -- ST404                          - Player is in the GrandHall 
-    [40] = "isinTrainingArea",              -- Lobby                          - Second check for the Training area
+    [40] = "isinTrainingArea",              -- Arena                          - Second check for the Training area
     [41] = "isinBowlingGame",               -- PlayingBowlingGame             - True once the player confirms with the NPC that they wish to start a Bowling mini-game
     [42] = "isinArmWrestling",              -- PlayingArmWrestling            - True as soon as the player sits at a Arm wrestling table
     [43] = "isatTable",                     -- TableAction                    - Sitting at gathering hub table
