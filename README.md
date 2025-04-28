@@ -85,6 +85,11 @@ MonsterHunterWilds
 
 </details>
 
+<details><summary><h3>Ideas for Improvements</h3></summary>
+• Manually confirm and reword all the remaining states.  
+  
+• Add useful grouping. Example, grouping all arena states into a `PlayerStituation.isinAnyArenaQuest`.  
+</details>
 
   
   <br />
