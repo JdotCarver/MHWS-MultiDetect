@@ -151,19 +151,19 @@ sdk.hook(
             print("")
 
             if #still_active > 0 then
-                print(" Player is still:")
+                print(" Player still:")
                 for _, id in ipairs(still_active) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print(" = " .. name .. " (" .. id .. ")")
+                    print(" = " .. name .. " [" .. id .. "]")
                 end
                 print("")
             end
             
             if #removed > 0 then
-                print(" Player is no longer:")
+                print(" Player no longer:")
                 for _, id in ipairs(removed) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print(" - " .. name .. " (" .. id .. ")")
+                    print(" - " .. name .. " [" .. id .. "]")
                 end
                 print("")
             end
@@ -176,11 +176,11 @@ sdk.hook(
                         print(" Player started in these Situations:") 
                     end
                 else 
-                    print(" Player is now:") 
+                    print(" Player now:")
                 end
                 for _, id in ipairs(added) do
                     local name = known_situations[id] or ("<Unknown %d>"):format(id)
-                    print(" + " .. name .. " (" .. id .. ")")
+                    print(" + " .. name .. " [" .. id .. "]")
                 end
                 print("")
             end
@@ -197,4 +197,3 @@ sdk.hook(
     end,
     function(retval) return retval end
 )
-
