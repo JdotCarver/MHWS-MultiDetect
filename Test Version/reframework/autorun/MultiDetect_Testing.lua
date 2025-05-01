@@ -146,7 +146,7 @@ sdk.hook(
             if first_run then
                 print("-= Initial Player Situation has been successfully recorded. The next situation change will display details. :) =-")
             else
-                print("-= Situation change detected =-")
+                print("[@" .. os.date("%H:%M:%S") .. "] -= Situation change detected =-")
             end
             print("")
 
@@ -171,9 +171,9 @@ sdk.hook(
             if #added > 0 then
                 if first_run then 
                     if #added == 1 then --Haha, yes, I know, "ConsoleUI".
-                        print(" Player started in this Situation:") 
+                        print(" Player started in this Situation:")
                     else
-                        print(" Player started in these Situations:") 
+                        print(" Player started in these Situations:")
                     end
                 else 
                     print(" Player now:")
@@ -185,9 +185,9 @@ sdk.hook(
                 print("")
             end
 
-            if first_run then 
+            if first_run then
                 print("")
-                first_run = false 
+                first_run = false
                 else
                     print("") print("")
             end
