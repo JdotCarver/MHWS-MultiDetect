@@ -6,10 +6,9 @@ return {
     [1]  = "isOnline",                      -- Online                         - Player is not Offline or Solo-Online
     [2]  = "isSoloOnline",                  -- SoloOnline                     - Exclusive to the Solo-Online mode
     [3]  = "isOfflineorMainMenu",           -- Offline                        - Game is in Offline mode, also true while in the main menu
-    [4]  = "isinArenaQuestWaitingasHost",   -- (???)                          - Waiting for Arena Quest, playing as Host.
-    [5]  = "isinQuestPreparing",            -- QuestPreparing                 - Player has accepted a Quest but has chosen to "Prepare"
-    [6]  = "isinQuestReady",                -- QuestReady                     - Player has accepted a Quest and has chosen "Ready"
-    [7]  = "isinQuestPlayingasHost",        -- QuestPlayingHost               - In Quest playing as Host (not Arena)
+    [4]  = "isinQuestPreparing",            -- QuestPreparing                 - Player has accepted a Quest but has chosen to "Prepare"
+    [5]  = "isinQuestReady",                -- QuestReady                     - Player has accepted a Quest and has chosen "Ready"
+    [6]  = "isinQuestPlayingasHost",        -- QuestPlayingHost               - In Quest playing as Host (not Arena)
     [8]  = "isinQuestPlayingasGuest",       -- QuestPlayingGuest              - In Quest playing as Guest (not Arena)
     [10] = "isinArenaQuestPlayingasHost",   -- DeclarationQuestPlayingHost    - The Quest has started and the Player is the Host
     [16] = "isinQuestPressSelectToEnd",     -- QuestHagitori                  - End Quest UI prompt active 
