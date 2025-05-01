@@ -8,10 +8,10 @@ return {
     [3]  = "isOfflineorMainMenu",               -- Offline                        - Game is in Offline mode, also true while in the main menu
     [4]  = "isinQuestPreparing",                -- QuestPreparing                 - Player has accepted a Quest but has chosen to "Prepare"
     [5]  = "isinQuestReady",                    -- QuestReady                     - Player has accepted a Quest and has chosen "Ready"
-    [6]  = "isinQuestPlayingasHost",            -- QuestPlayingHost               - In Quest playing as Host (not Arena)
-    [7]  = "isinQuestPlayingasGuest",            -- QuestPlayingHost               - In Quest playing as Host (not Arena)
-    [8]  = "isinQuestPlayingfromFieldSurvey",   -- (???)                          - In Quest when the quest was started as a Field Survey
-    [9]  = "isinQuestPlayingasGuest",           -- QuestPlayingGuest              - In Quest playing as Guest (not Arena)
+    [6]  = "isinQuestPlayingasHost",            -- QuestPlayingHost               - In Quest, playing as Host (not Arena)
+    [7]  = "isinQuestPlayingasGuest",           -- QuestPlayingGuest              - In Quest, playing as Guest (not Arena)
+    [8]  = "isinQuestPlayingfromFieldSurvey",   -- (???)                          - In Quest, when the quest was started as a Field Survey
+    [9]  = "isinQuestPlayingasGuest",           -- (???)                          - In Quest, playing as Guest (not Arena)
     [10] = "isinArenaQuestPlayingasHost",       -- DeclarationQuestPlayingHost    - The Quest has started and the Player is the Host
     [16] = "isinQuestPressSelectToEnd",         -- QuestHagitori                  - End Quest UI prompt active 
     [17] = "isinQuestEndAnnounce",              -- QuestEndAnnounce               - The "Quest Complete"/"Quest Abandonned"/"Quest Failed" small cutscene
