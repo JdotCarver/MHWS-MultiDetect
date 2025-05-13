@@ -1,6 +1,6 @@
 # 🌟 The Good Stuff
 ### [🔗 Direct link to the method](https://github.com/JdotCarver/MHWS-MultiDetect/blob/main/Production%20Version/reframework/autorun/MultiDetect.lua)  
-This method only supports 22 out of the 44 possible states!  
+This method only supports 24 out of the 44 possible states!  
 Please help out mapping the remaining ones! See [testing version](https://github.com/JdotCarver/MHWS-MultiDetect/tree/main?tab=readme-ov-file#-the-testing-version) on how you can help.
   
 # Overview
