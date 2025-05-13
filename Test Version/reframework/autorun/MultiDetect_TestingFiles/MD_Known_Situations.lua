@@ -17,10 +17,11 @@ return {
     [17] = "isinQuestEndAnnounce",              -- QuestEndAnnounce               - The "Quest Complete"/"Quest Abandonned"/"Quest Failed" small cutscene
     [18] = "isinQuestResultScreen",             -- QuestResult                    - Viewing Quest results screen
     [29] = "isinQuestLoadingResult",            -- Lv2 missions                   - Loading that happens before results
+    [35] = "isinLinkPartyAsGuest",              -- LinkPartyGuest                 - The player is in a link party not as the host
     [36] = "isinTrainingArea",                  -- (???)                          - Player is in training area
     [37] = "isinJunctionArea",                  -- JunctionArea                   - Special transition or linking zone (example: Suja <-> Wyveria passage)
     [38] = "isinSuja",                          -- ST503                          - Player is in the town of Suja 
-    [39] = "isinGrandHub",                      -- ST404                          - Player is in the GrandHall 
+    [39] = "isinGrandHub",                      -- ST404                          - Player is in the GrandHub 
     [40] = "isinTrainingArea",                  -- Arena                          - Second check for the Training area
     [41] = "isinBowlingGame",                   -- PlayingBowlingGame             - True once the player confirms with the NPC that they wish to start a Bowling mini-game
     [42] = "isinArmWrestling",                  -- PlayingArmWrestling            - True as soon as the player sits at a Arm wrestling table
